@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Portfolio - Bento Box</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #E0AAFF;
+            --color-secondary: #FFFFFF;
+            --color-gray: #5c5c5c;
+            --color-destaque: #1d2adf;
+
+            --font-title-desktop: 3rem;
+            --font-span-desktop: 1.5rem;
+            --font-text-desktop: 1.2rem;
+
+            --font-title-mobile: 2rem;
+            --font-span-mobile: 1.2rem;
+            --font-text-mobile: 1rem;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--color-secondary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1800px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            box-sizing: border-box;
+            min-height: 100vh;
+            background: var(--color-primary);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: var(--color-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .top,
+        .center,
+        .bottom {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .top:hover,
+        .center:hover,
+        .bottom:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .user,
+        .projeto,
+        .redes-sociais,
+        .skills,
+        .servicos,
+        .contato {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .img-user img {
+            width: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--color-primary);
+        }
+
+        .info-user h1 {
+            padding-top: 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .info-user span {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--color-primary);
+        }
+
+        .info-user p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: var(--color-primary);
+        }
+
+        .img-projeto img {
+            width: 280px;
+            border-radius: 10px;
+            border: 4px solid var(--color-primary);
+        }
+
+        .btn {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: 0.7rem 1.3rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: var(--color-gray);
+            transform: translateY(-5px);
+        }
+
+        .box-social {
+            background-color: var(--color-primary);
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .box-social i {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+        }
+
+        .box-social:hover {
+            background-color: var(--color-gray);
+            transform: scale(1.1);
+        }
+
+        .skills-icons i {
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .skills-icons i:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        /* Cores específicas para cada ícone das skills */
+        .skills-icons .fa-html5:hover {
+            color: #e34f26;
+        }
+
+        .skills-icons .fa-css3-alt:hover {
+            color: #1572b6;
+        }
+
+        .skills-icons .fa-js:hover {
+            color: #f7df1e;
+        }
+
+        .skills-icons .fa-bootstrap:hover {
+            color: #7952b3;
+        }
+
+        .skills-icons .fa-react:hover {
+            color: #61dafb;
+        }
+
+        .skills-icons .fa-node:hover {
+            color: #339933;
+        }
+
+        .skills-icons .fa-php:hover {
+            color: #777bb4;
+        }
+
+        .skills-icons .fa-github:hover {
+            color: #181717;
+        }
+
+        .item-servico {
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+            width: 100%;
+            max-width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .item-servico i {
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+
+        .item-servico span {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+        }
+
+        .item-servico:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-contato h1 {
+            font-size: var(--font-title-mobile);
+            color: var(--color-secondary);
+        }
+
+        .lista-contato a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .lista-contato a:hover {
+            color: var(--color-gray);
+        }
+
+        .btn2 {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: .7rem 1.3rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .btn2:hover {
+            background-color: var(--color-gray);
+            transform: translateY(-5px);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!--WIDGET 1-->
+        <div id="widget1" class="top">
+            <div class="user card">
+                <div class="content-user">
+                    <div class="img-user">
+                        <img src="image/sua-foto-perfil.png" alt="user">
+                    </div>
+                    <div class="info-user">
+                        <h1>Nome do Usuario</h1>
+                        <span>Cargo do Usuario</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem excepturi provident
+                            cupiditate expedita? Aspernatur commodi fugiat, quasi expedita, iste recusandae dolores
+                            voluptates facere doloremque accusamus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projeto card">
+                <div class="content-projeto">
+                    <span class="text-projeto">Último projeto</span>
+                    <div class="img-projeto">
+                        <img src="image/seu-projeto-destaque.png" alt="projeto">
+                    </div>
+                    <div class="btn-projeto">
+                        <a href="#" class="btn">Acesse o site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--WIDGET 2-->
+        <div id="widget2" class="center">
+            <div class="redes-sociais card">
+                <div class="box-social"><a href="#"><i class="fab fa-github"></i></a></div>
+                <div class="box-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                <div class="box-social"><a href="#"><i class="fab fa-instagram"></i></a></div>
+                <div class="box-social"><a href="#"><i class="fab fa-tiktok"></i></a></div>
+            </div>
+
+            <div class="skills card">
+                <div class="content-skills">
+                    <div class="text-skills">
+                        <span>My Skills</span>
+                    </div>
+                    <div class="skills-icons">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js"></i>
+                        <i class="fab fa-bootstrap"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-node"></i>
+                        <i class="fab fa-php"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--WIDGET 3-->
+        <div id="widget3" class="bottom">
+            <div class="servicos card">
+                <div class="content-servicos">
+                    <div class="text-servicos">
+                        <h1>Serviços</h1>
+                        <span>Serviços que vão posicionar sua empresa no mundo digital</span>
+                    </div>
+
+                    <div class="servicos-box">
+                        <div class="item-servico">
+                            <i class="fas fa-code"></i>
+                            <span>Criação de sites</span>
+                        </div>
+                        <div class="item-servico">
+                            <i class="fas fa-search"></i>
+                            <span>Otimizações de SEO</span>
+                        </div>
+                        <div class="item-servico">
+                            <i class="fas fa-headset"></i>
+                            <span>Suporte e manutenção</span>
+                        </div>
+                        <div class="item-servico">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Web Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contato card">
+                <div class="content-contato">
+                    <div class="text-contato">
+                        <h1>Contato</h1>
+                        <span>Deixe-me mostrar o potêncial digital que sua empresa tem com um site único!</span>
+                    </div>
+
+                    <div class="lista-contato">
+                        <a href="#">seuemail@seuemail.com.br</a>
+                        <a href="#">+55 11 55555-5555</a>
+                    </div>
+                    <div class="btn-contato">
+                        <a href="#" class="btn2">Fale comigo agora!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+@media (min-width: 768px) and (max-width: 999px) {
+    .servicos-box {
+        flex-direction: row;
+        gap: 1rem; /* Adiciona um espaçamento entre os itens */
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        height: 100vh;
+        overflow: hidden; /* Evita rolagem vertical */
+    }
+    
+    /* Widget 1 */
+    .top {
+        width: 100%;
+        height: 40vh;
+        flex-direction: row;
+        gap: 2rem; /* Adiciona um espaçamento entre usuário e projeto */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .top:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .user {
+        width: 70%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .user:hover {
+        transform: scale(1.05);
+    }
+
+    .info-user h1 {
+        font-size: 1.8rem;
+    }
+    
+    .info-user span {
+        font-size: 1.5rem;
+    }
+    
+    .info-user p {
+        font-size: 1.2rem;
+    }
+
+    .projeto {
+        width: 30%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .projeto:hover {
+        transform: scale(1.05);
+    }
+
+    /* Widget 2 */
+    .center {
+        width: 100%;
+        height: 10vh;
+        flex-direction: row;
+        gap: 2rem; /* Adiciona um espaçamento entre redes sociais e habilidades */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .center:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .redes-sociais {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .skills {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    /* Widget 3 */
+    .bottom {
+        width: 100%;
+        height: 40vh;
+        flex-direction: row-reverse;
+        gap: 2rem; /* Adiciona um espaçamento entre contato e serviços */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .bottom:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .contato {
+        width: 30%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .contato:hover {
+        transform: scale(1.05);
+    }
+
+    .servicos {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .servicos:hover {
+        transform: scale(1.05);
+    }
+
+    .servicos-box {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .item-servico {
+        width: 240px;
+        height: 240px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .item-servico:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .item-servico i {
+        font-size: 2.5rem;
+        color: var(--color-destaque);
+    }
+
+    .item-servico span {
+        font-size: 1rem;
+        color: var(--color-white);
+    }
+}
